@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylep.css">
+
+    <script src="https://kit.fontawesome.com/a72e38ff04.js" crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="all">
+        <header>
+            <h1 class="logo">Innovationscape    <i class="fa-solid fa-person-running"></i></h1>
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Produkte</a></li>
+                    <li><a href="about.html">Über uns</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>       
+
+        <div class="container">
+            <div class="imgBx">
+                <img src="img/tent_black.png" alt="Expedition Tent" draggable="false">
+            </div>
+            <div class="details">
+                <div class="content">
+                    <h2>Expedition <br>
+                        <span>ZELT-SAMMLUNG</span>
+                    </h2>
+                    <p>
+                        Wir stellen unser Premium-Zelt vor, die perfekte Wahl für Outdoor-Enthusiasten. Dieses Zelt verfügt über ein einzigartiges Sternenfenster und eine integrierte Bodenmatte für zusätzlichen Komfort und Isolierung. Es ist aus hochwertigen Materialien gefertigt und verfügt über ein robustes und langlebiges Design, das rauen Wetterbedingungen standhält. Das einfach zu montierende Design ermöglicht einen problemlosen Auf- und Abbau und ist somit die ideale Wahl für jeden Campingausflug.
+                    </p>
+                    <p class="product-colors">Verfügbare Farben::
+                        <span class="black active" data-color-primary="#000" data-color-sec="#212121" data-pic="img/tent_black.png"></span>
+                        <span class="red" data-color-primary="#027e1c" data-color-sec="#07ad29" data-pic="img/tent_green.png"></span>
+                        <span class="orange" data-color-primary="#CE5B39" data-color-sec="#F18557" data-pic="img/tent_orange.png"></span>
+                    </p>
+                    <h3>530.- CHF</h3>
+                    <button>Kaufe jetzt</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="foot_wrap">
+                <div class="foot_button">
+                    <div class="foot_icon"><i class="fab fa-facebook-f"></i></div>
+                    <span>Facebook</span>
+                </div>
+    
+                <div class="foot_button">
+                    <div class="foot_icon"><i class="fa-brands fa-instagram"></i></div>
+                    <span>Instagram</span>
+                </div>
+    
+                <div class="foot_button">
+                    <div class="foot_icon"><i class="fa-solid fa-globe"></i></div>
+                    <span>Website</span>
+                </div>
+    
+        </footer>
+    </div>
+
+
+    <script>
+        $(".product-colors span").click(function() {
+            $(".product-colors span").removeClass("active");
+            $(this).addClass("active");
+            $(".active").css("border-color", $(this).attr("data-color-sec"))
+            $("body").css("background", $(this).attr("data-color-primary"));
+            $(".content h2").css("color", $(this).attr("data-color-sec"));
+            $(".content h3").css("color", $(this).attr("data-color-sec"));
+            $(".container .imgBx").css("background", $(this).attr("data-color-sec"));
+            $(".container .details button").css("background", $(this).attr("data-color-sec"));
+            $(".imgBx img").attr('src', $(this).attr("data-pic"));
+        });
+    </script>
+
+</body>
+
+</html>

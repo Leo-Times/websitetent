@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylec.css">
+
+    <script src="https://kit.fontawesome.com/a72e38ff04.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="logo">Innovationscape    <i class="fa-solid fa-person-running"></i></h1>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Produkte</a></li>
+                <li><a href="about.html">Über uns</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>   
+
+    <div class="co_container">
+        <div class="contact_box">
+            <div class="left"></div>
+            <div class="right">
+                <h2>Kontaktiere uns</h2>
+                <form name ="submit-to-google-sheet">
+                    <input type="text" class="field" name="name" placeholder="Name">
+                    <input type="email" class="field" name="email" placeholder="Email">
+                    <input type="text" class="field" name="phone" placeholder="Telephone Nummer">
+                    <textarea class="field area" name="msg" placeholder="Message"></textarea>
+                    <input id="submit" type="submit" name="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby_5vlkzDQ1853sDICGw8P7giO3OhmKNuOic3wyBOHQzGW8faSaTHsc4sMgHyJ3r-be/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      
+        document.addEventListener("keyup", function(event) {
+         if (event.keyCode === 13) {
+           console.log("yes")
+           window.location = 'contact.html'
+         }
+        });
+      </script>
+</body>
+</html>
+
